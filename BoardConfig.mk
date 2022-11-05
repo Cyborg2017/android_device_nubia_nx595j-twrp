@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-DEVICE_PATH := device/nubia/nx563j
+DEVICE_PATH := device/nubia/nx595j
 export ALLOW_MISSING_DEPENDENCIES=true
 # Architecture
 TARGET_ARCH := arm64

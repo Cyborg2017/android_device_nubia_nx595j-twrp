@@ -1,5 +1,5 @@
-# android_device_nubia_nx563j
-Tree for building TWRP for Nubia Z17
+# android_device_nubia_nx595j
+Tree for building TWRP for Nubia Z17S
 
 ## Kernel Sources
 
@@ -9,13 +9,13 @@ https://github.com/Cyborg2017/android_kernel_nubia_msm8998-oss/tree/lineage-20.0
 
 export ALLOW_MISSING_DEPENDENCIES=true
 
-. build/envsetup.sh && lunch omni_nx563j-eng
+. build/envsetup.sh && lunch omni_nx595j-eng
 
 mka adbd recoveryimage
 
 ## Device specifications
 
-ZTE Nubia Z17 (codenamed "nx563j") is a high-range smartphone from Nubia.
+ZTE Nubia Z17S (codenamed "nx595j") is a high-range smartphone from Nubia.
 It was released in June 2017.
 
 Basic   | Spec Sheet
@@ -29,6 +29,3 @@ Storage | 64/128 GB
 Battery | Li-Ion 3200mAh battery
 Display | 1080 x 1920 pixels, 5.5 inches
 Back camera  | Dual 23/12 MP, f/1.8, phase detection autofocus, dual-LED (dual tone) flash
-## Device picture
-
-![ZTE Nubia Z17](http://www.ixbt.com/short/images/2017/Jun/Nubia-Z17-official-01.jpg "ZTE Nubia Z17")

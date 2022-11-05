@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := nx563j
+PRODUCT_RELEASE_NAME := nx595j
 
 $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, build/target/product/core_64_bit.mk)
@@ -28,13 +28,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.gatekeeper=msm8998
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := nx563j
-PRODUCT_NAME := omni_nx563j
+PRODUCT_DEVICE := nx595j
+PRODUCT_NAME := omni_nx595j
 PRODUCT_BRAND := nubia
-PRODUCT_MODEL := Z17
+PRODUCT_MODEL := Z17S
 PRODUCT_MANUFACTURER := nubia
 
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=NX563J PRODUCT_NAME=NX563J
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=NX595J PRODUCT_NAME=NX595J
 
 # Verity
 PRODUCT_SUPPORTS_BOOT_SIGNER := true
