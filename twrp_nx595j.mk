@@ -1,5 +1,5 @@
 #
-# Copyright 2017 The Android Open Source Project
+# Copyright 2017-2022 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,11 +17,17 @@
 # Release name
 PRODUCT_RELEASE_NAME := nx595j
 
-$(call inherit-product, build/target/product/embedded.mk)
-$(call inherit-product, build/target/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+# qcom standard decryption
+PRODUCT_PACKAGES += \
+	qcom_decrypt \
+	qcom_decrypt_fbe
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8998 \
@@ -29,7 +35,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nx595j
-PRODUCT_NAME := omni_nx595j
+PRODUCT_NAME := twrp_nx595j
 PRODUCT_BRAND := nubia
 PRODUCT_MODEL := Z17S
 PRODUCT_MANUFACTURER := nubia
@@ -41,3 +47,8 @@ PRODUCT_SUPPORTS_BOOT_SIGNER := true
 PRODUCT_SUPPORTS_VERITY := true
 PRODUCT_SUPPORTS_VERITY_FEC := true
 PRODUCT_VERITY_SIGNING_KEY := build/target/product/security/verity
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="NX595J-user 7.1.1 NMF26X eng.nubia.20181008.160254 release-keys"
+
+BUILD_FINGERPRINT := nubia/NX595J/NX595J:7.1.1/NMF26X/eng.nubia.20171019.101529:user/release-keys
